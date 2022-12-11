@@ -1,0 +1,47 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Response Form</h1>
+      <nav>
+         <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a routerLink="/">Home</a></li> -->
+            <li class="breadcrumb-item">Faculty</li>
+            <li class="breadcrumb-item active">Response Form</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section">
+      <div class="row">
+
+
+         <div class="d-flex justify-content-center">
+            <div class="col-lg-9">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Response Form</h5>
+                     <form class="row g-3" #response="ngForm" (ngSubmit)="onsubmit()">
+                        <div class="col-12"> <label for="inputNanme4" class="form-label">Name of the requirement</label>
+                           <input type="text" disabled name="namereq" [(ngModel)]="responseform.namereq"
+                              class="form-control" id="inputNanme4">
+                        </div>
+
+                        <div class="col-12"> <label for="inputNanme4" class="form-label">Comments</label>
+                           <input type="text" name="comments" [(ngModel)]="responseform.comments" class="form-control"
+                              id="inputNanme4"    [class.is-invalid]="comments.invalid && comments.touched"  #comments="ngModel"  required>
+                              <small class="text-danger" [class.d-none]="comments.valid||comments.untouched">Required Field</small>
+                        </div>
+
+                         <div class="col-12"><label for="inputNumber" class="form-label">File Upload</label>
+                           <input class="form-control" type="file" id="formFile" (change)="selectFile($event)"  [(ngModel)]="responseform.fileupload"  name="fileupload"  #fileupload="ngModel" required>
+                           <small class="text-danger" [class.d-none]="fileupload.valid||fileupload.untouched">Required Field</small>
+                        </div>
+                        <div class="text-center"> <button type="submit" class="btn btn-primary" [disabled]="response.form.invalid">Submit</button> </div>
+                     </form>
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+   </section>
+</main>

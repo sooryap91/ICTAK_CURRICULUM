@@ -1,0 +1,59 @@
+<!-- <app-layoutfaculty></app-layoutfaculty> -->
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Requirement Form </h1>
+      <nav>
+         <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a routerLink="/">Home</a></li> -->
+            <li class="breadcrumb-item">Faculty</li>
+            <li class="breadcrumb-item active">Requirement Form</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="card">
+               <div class="card-body">
+                  <h5 class="card-title">Requirement Form</h5>
+                  <table class="table datatable">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Name</th>
+                           <th scope="col">Institution</th>
+                           <th scope="col">Hours</th>
+                           <th scope="col">Area</th>
+                           <th scope="col">Category</th>
+                           <th scope="col">Action</th>
+
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr *ngFor="let list of lists;let i = index">
+                           <th scope="row">{{i+1}}</th>
+                           <td>{{list.namereq}}</td>
+                           <td>{{list.institution}}</td>
+                           <td>{{list.hours}}</td>
+                           <td>{{list.area}}</td>
+                           <td>{{list.category}}</td>
+                            <td>
+
+                              <button type="button" routerLink="/faculty/responseform/{{list._id}}"
+                                 class="btn btn-dark">Respond</button>
+
+                           </td>
+
+
+                        </tr>
+
+
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+<router-outlet></router-outlet>

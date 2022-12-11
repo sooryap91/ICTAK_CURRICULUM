@@ -1,0 +1,62 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Curriculum</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item">Faculty</li>
+                <li class="breadcrumb-item active">Curriculam</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section profile">
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-right"> <button type="submit" class="btn btn-primary" (click)="openPDF()">Download
+                            <i class="bi bi-download"></i></button> </div><br>
+                    <div class="card">
+                        <div class="card-body pt-3">
+
+                            <div class="tab-content pt-2">
+                                <div class="tab-pane fade show active profile-overview" id="htmlData">
+
+
+                                    <h5 class="card-title text-center">{{curriculum.namereq}}</h5>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Name:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.namereq}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Institution:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.institution}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Category:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.category}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Area:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.area}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Hours:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.hours}}</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Comments:</div>
+                                        <div class="col-lg-9 col-md-8">{{curriculum.comments}}</div>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,62 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Edit Curriculum </h1>
+        <nav>
+            <ol class="breadcrumb">
+                <!-- <li class="breadcrumb-item"><a routerLink="/">Home</a></li> -->
+                <li class="breadcrumb-item">Faculty</li>
+                <li class="breadcrumb-item active">Edit Curriculum</li>
+            </ol>
+        </nav>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Edit Curriculum</h5>
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Institution</th>
+                                    <th scope="col">Area</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Hours</th>
+                                    <th scope="col">Comments</th>
+                                    <th scope="col">File</th>
+                                    <th scope="col">Action</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let curr of ncurrlist;let i = index">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{curr.namereq}}</td>
+                                    <td>{{curr.institution}}</td>
+                                    <td>{{curr.area}}</td>
+                                    <td>{{curr.category}}</td>
+                                    <td>{{curr.hours}}</td>
+                                    <td>{{curr.comments}}</td>
+                                    <td><a href="http://localhost:3500/{{curr.fileuploadpath}}" target="_blank">{{curr.
+                                            fileuploadname}}</a></td>
+
+                                    <td>
+
+                                        <button type="button" class="btn btn-dark"
+                                            routerLink="/faculty/editform/{{curr._id}}">Edit</button>
+
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

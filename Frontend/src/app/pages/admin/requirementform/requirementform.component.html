@@ -1,0 +1,82 @@
+
+<main id="main" class="main">
+    <div class="pagetitle">
+       <h1>Requirement <Form></Form></h1>
+       <nav>
+          <ol class="breadcrumb">
+             <!-- <li class="breadcrumb-item"><a routerLink="/">Home</a></li> -->
+             <li class="breadcrumb-item">Admin</li>
+             <li class="breadcrumb-item active">Requirement Form</li>
+          </ol>
+       </nav>
+    </div>
+    <section class="section">
+       <div class="row">
+             
+         <div class="d-flex justify-content-center">
+
+          
+          <div class="col-lg-8">
+             <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">Requirement Form</h5>
+                   <form class="row g-3" [formGroup] = "reqform" (ngSubmit)="onsubmit()">
+                      <div class="col-12"> 
+                        <label for="inputNanme4" class="form-label">Name of the requirement</label> 
+                        <input type="text" formControlName="namereq" class="form-control" id="inputNanme4">
+                        <span style="color:red ;font-size: small;" *ngIf="namereq && namereq.invalid && namereq.touched">this filed is required</span>
+                     </div>
+                     
+                     <div class="col-12"> <label for="inputEmail4" class="form-label">Institution/Corporate Office</label>
+                         <input type="text"  formControlName="institution"class="form-control" id="inputEmail4">
+                         <span style="color:red ;font-size: small;" *ngIf="institution && institution.invalid && institution.touched">this filed is required</span>
+                        </div>
+
+                      <div class="col-12"> <label class= "form-label">Area of training </label>
+                           <select class="form-select" formControlName="area" aria-label="Default select example">
+                              <option selected></option>
+                              <option value="FSD">FSD</option>
+                              <option value="ML/AI">ML/AI</option>
+                              <option value="DSA">DSA</option>
+                              <option value="RPA">RPA</option>
+                              <option value="ST">ST</option>
+                              <option value="CSA">CSA</option>
+
+                           </select>
+                           <span style="color:red ;font-size: small;" *ngIf="area && area.invalid && area.touched">this filed is required</span>
+
+                        </div>
+                        <div class="col-12"> <label class= "form-label">Category</label>
+                            <select class="form-select"formControlName="category" aria-label="Default select example">
+                               <option selected></option>
+                               <option value="Retail">Retail</option>
+                               <option value="Academic">Academic</option>
+                               <option value="Corporate">Corporate</option>
+                               
+ 
+                            </select>
+                            <span style="color:red ;font-size: small;" *ngIf="category && category.invalid && category.touched">this filed is required</span>
+
+                         </div>
+                         <div class="col-12"> <label for="inputNanme4" class="form-label">Number of hours of training</label>
+                            <input type="text"formControlName="hours" class="form-control" id="inputNanme4">
+                            <span style="color:red ;font-size: small;" *ngIf="hours && hours.invalid && hours.touched">this filed is required</span>
+
+                           </div>
+                         <div class="col-12"><label for="inputNumber" class="form-label">File Upload</label>
+                          <input class="form-control" formControlName="fileupload" type="file" id="formFile">
+                          <span style="color:red;font-size: small;" *ngIf="fileupload && fileupload.invalid && fileupload.touched">this filed is required</span>
+                        </div>
+                      <div class="text-center"> 
+                        <button type="submit" class="btn btn-primary" [disabled]="reqform.invalid">Submit</button> 
+                     </div>
+                   </form>
+                </div>
+             </div>
+             
+             
+          </div>
+         </div>
+       </div>
+    </section>
+ </main>

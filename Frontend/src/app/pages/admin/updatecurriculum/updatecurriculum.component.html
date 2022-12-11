@@ -1,0 +1,90 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Update Curriculum<Form></Form>
+      </h1>
+      <nav>
+         <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item">Home</li> -->
+            <li class="breadcrumb-item">Admin</li>
+            <li class="breadcrumb-item active">Update Curriculum</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section">
+      <div class="row">
+
+         <div class="d-flex justify-content-center">
+
+
+            <div class="col-lg-8">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Update Curriculum</h5>
+                     <form class="row g-3" #curriculamedit="ngForm" (ngSubmit)="onsubmit()">
+                        <div class="col-12">
+                           <label for="inputNanme4" class="form-label">Name of the requirement</label>
+                           <input type="text" name="namereq" [(ngModel)]="curriculum.namereq" class="form-control"
+                              id="inputNanme4" #namereq="ngModel" required>
+                           <small class="text-danger" [class.d-none]="namereq.valid||namereq.untouched">Required
+                              Field</small>
+                        </div>
+
+                        <div class="col-12"> <label for="inputEmail4" class="form-label">Institution/Corporate
+                              Office</label>
+                           <input type="text" name="institution" [(ngModel)]="curriculum.institution"
+                              class="form-control" id="inputEmail4" #institution="ngModel" required>
+                           <small class="text-danger" [class.d-none]="institution.valid||institution.untouched">Required
+                              Field</small>
+                        </div>
+
+                        <div class="col-12"> <label class="form-label">Area of training </label>
+                           <select [(ngModel)]="curriculum.area" class="form-select" name="area" aria-label="Default select example" #area="ngModel" required>
+                              <option selected></option>
+                              <option value="FSD">FSD</option>
+                              <option value="ML/AI">ML/AI</option>
+                              <option value="DSA">DSA</option>
+                              <option value="RPA">RPA</option>
+                              <option value="ST">ST</option>
+                              <option value="CSA">CSA</option>
+
+                           </select>
+                           <small class="text-danger" [class.d-none]="area.valid||area.untouched">Required
+                              Field</small>
+
+                        </div>
+                        <div class="col-12"> <label class="form-label">Category</label>
+                           <select  [(ngModel)]="curriculum.category" class="form-select" aria-label="Default select example" name="category" #category="ngModel" required>
+                              <option selected></option>
+                              <option value="Retail">Retail</option>
+                              <option value="Academic">Academic</option>
+                              <option value="Corporate">Corporate</option>
+
+
+                           </select>
+                           <small class="text-danger" [class.d-none]="category.valid||category.untouched">Required
+                              Field</small>
+
+                        </div>
+                        <div class="col-12"> <label for="inputNanme4" class="form-label">Number of hours of
+                              training</label>
+                           <input type="text" name="hours" [(ngModel)]="curriculum.hours" class="form-control"
+                              id="inputNanme4" #hours="ngModel" required>
+
+                           <small class="text-danger" [class.d-none]="hours.valid||hours.untouched">Required
+                              Field</small>
+                        </div>
+
+                        <div class="text-center">
+                           <button type="submit" class="btn btn-primary" [disabled]="curriculamedit.form.invalid">Update</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+
+
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+<router-outlet></router-outlet>

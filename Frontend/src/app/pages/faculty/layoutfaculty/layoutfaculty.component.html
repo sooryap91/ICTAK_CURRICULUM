@@ -1,0 +1,112 @@
+<!-- header start -->
+<header id="header" class="header fixed-top d-flex align-items-center">
+   <div class="d-flex align-items-center justify-content-between"> <a routerLink="/dashboard"
+
+         class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span
+            class="d-none d-lg-block">Faculty</span> </a> <i (click)="sidebarToggle()"
+         class="bi bi-list toggle-sidebar-btn"></i></div>
+  
+   <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+         <li class="nav-item d-block d-lg-none"> <a class="nav-link nav-icon search-bar-toggle " href="#"> <i
+                  class="bi bi-search"></i> </a></li>
+         <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown"> <i class="bi bi-bell"></i> <span
+                  class="badge bg-primary badge-number">{{ approvedcount}}
+               </span> </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+               <li class="dropdown-header"> Admin approved {{ approvedcount}} curriculums
+                   </li>
+              
+               
+               
+              
+               
+              
+            </ul>
+         </li>
+         <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown"> <i class="bi bi-chat-left-text"></i> <span
+                  class="badge bg-success badge-number">{{responsependingcount}}</span> </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+               <li class="dropdown-header"> You have to respond {{responsependingcount}}  requirement
+                 
+               </li>
+            </ul>
+         </li>
+         <li class="nav-item dropdown pe-3">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> <i
+                  class="bi bi-person-circle"></i> <span class="d-none d-md-block dropdown-toggle ps-2">Faculty</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+               <li class="dropdown-header">
+                  <h6>Faculty</h6>
+
+               </li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+              
+               <li> <a class="dropdown-item d-flex align-items-center" routerLink="facultydashboard"> <i class="bi bi-grid"></i> <span>Dashboard</span> </a></li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+              
+               <li>
+
+                 <a class="dropdown-item d-flex align-items-center" routerLink="/login"> <button style = "color:darkblue;"  class = "border-0 bg-white "(click) = "logout()"><i class="bi bi-box-arrow-right"></i> <span>Sign Out</span> </button></a>
+             </li>
+               
+            </ul>
+         </li>
+      </ul>
+   </nav>
+</header>
+
+
+
+<!-- header end -->
+<!-- sidebar starts -->
+<aside id="sidebar" class="sidebar">
+   <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item"> <a class="nav-link " routerLink="facultydashboard"> <i class="bi bi-grid"></i> <span>Dashboard</span> </a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse"
+            routerLink="requirementformfaculty"> <i class="bi bi-menu-button-wide"></i><span>Requirement from
+               Admin</span> </a>
+
+      </li>
+
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" routerLink="pastcurriculum"
+            href="#"> <i class="bi bi-journal-text"></i><span>Past Curriculum</span> </a>
+
+      </li>
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" routerLink="editcurriculum"
+            href="#"> <i class="bi bi-gem"></i><span>Edit Curriculum</span> </a>
+
+      </li>
+
+      <li class="nav-item">
+         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" routerLink="/login">
+           
+            <button style="color:#012970;font-weight: 600;" class = "border-0 bg-white "(click) = "logout()">
+               <i style = "font-size: 17px "class="bi bi-box-arrow-right">
+            </i><span>Logout</span></button> </a>
+
+      </li>
+
+   </ul>
+
+</aside>
+<router-outlet></router-outlet>
+
+<!-- sidebar ends -->
+<!-- footer -->
+<footer id="footer" class="footer">
+   <div class="copyright"> &copy; Copyright <strong><span>ICTAK</span></strong>. All Rights Reserved 2022</div>
+   <!-- <div class="credits"> with love <a href="https://freeetemplates.com/">FreeeTemplates</a></div> -->
+</footer>
+<a (click)="scrollTop()" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

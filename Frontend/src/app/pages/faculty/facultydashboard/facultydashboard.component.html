@@ -1,0 +1,112 @@
+<main id="main" class="main">
+   <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+         <ol class="breadcrumb">
+            <!-- <li class="breadcrumb-item"><a routerLink="/">Home</a></li> -->
+            <li class="breadcrumb-item active">Dashboard</li>
+         </ol>
+      </nav>
+   </div>
+   <section class="section dashboard">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="row">
+               <div class="col-xxl-4 col-md-4">
+                  <div class="card info-card revenue-card">
+
+                     <div class="card-body">
+                        <h5 class="card-title">Curriculum <span>| Approved</span></h5>
+                        <div class="d-flex align-items-center">
+                           <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"><i
+                                 class="bi bi-check-circle"></i></div>
+                           <div class="ps-3">
+                              <h6>{{ approvedcount}}</h6>
+                              <span class="text-success small pt-1 fw-bold">Admin</span>
+                              <span class="text-muted small pt-2 ps-1">Approved</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-4 col-md-4">
+                  <div class="card info-card customers-card">
+
+                     <div class="card-body">
+                        <h5 class="card-title">Curriculum <span>| Pending</span></h5>
+                        <div class="d-flex align-items-center">
+                           <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                                 class="bi bi-dash-circle"></i></div>
+                           <div class="ps-3">
+                              <h6>{{notapprovedcount}}</h6>
+                              <span class="text-danger small pt-1 fw-bold">Admin</span>
+                              <span class="text-muted small pt-2 ps-1">Pending</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-4 col-md-4">
+                  <div class="card info-card sales-card">
+
+                     <div class="card-body">
+                        <h5 class="card-title">Response <span>| Pending</span></h5>
+                        <div class="d-flex align-items-center">
+                           <div class="card-icon rounded-circle d-flex align-items-center justify-content-center"> <i
+                                 class="bi bi-exclamation-circle"></i></div>
+                           <div class="ps-3">
+                              <h6>{{responsependingcount}}</h6>
+                              <span class="text-danger small pt-1 fw-bold">Pending</span> <span
+                                 class="text-muted small pt-2 ps-1"></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
+               <div class="col-12">
+                  <div class="card recent-sales overflow-auto">
+
+                     <div class="card-body">
+                        <h5 class="card-title">Curriculum <span>| Approved</span></h5>
+                        <table class="table table-borderless datatable" id="htmlData" >
+                           <thead>
+                              <tr>
+                                 <th scope="col">#</th>
+                                 <th scope="col">Name</th>
+                                 <th scope="col">Institution</th>
+                                 <th scope="col">Area</th>
+                                 <th scope="col">Category</th>
+                                 <th scope="col">Hours</th>
+                                 <th scope="col">File</th>
+
+                                 <!-- <th scope="col">Comments</th> -->
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr *ngFor="let list of currlists;let i = index">
+                                 <th scope="row">{{i+1}}</th>
+                                 <td><a class="nav-link" routerLink="/faculty/view/{{list._id}}">{{list.namereq}}</a></td>
+                                 <td>{{list.institution}}</td>
+                                 <td>{{list.area}}</td>
+                                 <td>{{list.category}}</td>
+                                 <td>{{list.hours}}</td>
+                                 <td><a href="http://localhost:3500/{{list.fileuploadpath}}" target="_blank">{{list. fileuploadname}}</a></td>
+
+                                 <!-- <td>{{list.comments}}</td> -->
+                              </tr>
+
+
+
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </section>
+</main>
